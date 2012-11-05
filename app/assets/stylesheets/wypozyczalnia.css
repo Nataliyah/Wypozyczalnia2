@@ -1,4 +1,4 @@
-body {
+/*body {
 	background-image: url(element.jpg);
 	font-family: Verdana;
 	margin: 0 auto;
@@ -62,7 +62,10 @@ body {
 	background-color: white;
 	border: black 2px solid;
 	/*width: 568px;*/
+  /*
 }
+
+
 
 #zawartosc {
 	border: solid 1px none;
@@ -86,7 +89,9 @@ body {
 
 /* nowe */
 
-.div_tabs {
+/*
+
+/*.div_tabs {
    overflow: auto;
 }
 
@@ -118,6 +123,8 @@ body {
   margin: 0 auto;
   border: black 1px solid;
 }
+
+
 
 /*
 a:link {	
