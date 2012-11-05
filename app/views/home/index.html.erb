@@ -6,6 +6,8 @@ In previous versions of Rails, the default local variable would look for an inst
 
 <div class="div_tabs">
   
+<% if @last_thing %>
+  
 <div class="div_tab_news">
   
  <% thing = @last_thing %>
@@ -29,6 +31,10 @@ In previous versions of Rails, the default local variable would look for an inst
   <% end %>
   <br />
   
+
+  
 </div>
+
+<% end %>
   
 </div>
