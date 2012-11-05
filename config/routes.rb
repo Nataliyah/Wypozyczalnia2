@@ -1,4 +1,4 @@
-Wypozyczalnia::Application.routes.draw do
+Wypozyczalnia2::Application.routes.draw do
   
 
   #get "home/index"
