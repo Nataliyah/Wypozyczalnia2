@@ -1,4 +1,27 @@
-Wypozyczalnia2::Application.routes.draw do
+Wypozyczalnia::Application.routes.draw do
+  
+
+  #get "home/index"
+    
+ # get "users/index"
+ # get "users/show"
+  
+  get "things/index"
+  get "things/show"
+  get "things/new"  
+  
+  post "lendings/create"
+  get "lendings/index"
+    
+  delete "sessions/destroy"
+  
+  resources :users
+  resources :sessions
+  resources :things
+  resources :lendings
+  
+  root :to => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

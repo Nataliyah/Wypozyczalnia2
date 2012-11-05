@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Wypozyczalnia2::Application.config.secret_token = '864a36fe24df10fdf26f36ae429bfcf758e7040d4082a821fc55e632a81bf1476e793d2298a587b0cb0ca4fdc5da43a6fd89c9de4972128cec32295ff488a721'
+Wypozyczalnia::Application.config.secret_token = '38f4f88ca6952c3c8ffd39df6578182b8a082b703c5b8c0b3e5834bed5c6121279f3401b049d4c1b61aa893173df08ed59655d1299e4a64723d8939b5321a547'
