@@ -1,0 +1,50 @@
+<h3>Lista przedmiotów</h3>
+
+<div class="div_tabs">
+  
+<% @things.each_with_index do |thing, index| %>
+
+<div class="div_tab_thing">
+  
+  <!-- Name -->
+  <%= link_to thing.name, thing %><br />
+  
+  <!-- Photo -->
+  <p>
+  <% if is_proper_photo(thing.photo) %>
+    <%= link_to image_tag(thing.photo, :class => "im_thing", :height => "110" ), thing %>
+  <% else %>
+    <%= image_tag "no_photo.png", :class => "im_thing", :size => "100x110" %>
+  <% end %>
+  </p>
+  
+  <!-- Owner -->
+  Wlaściciel:
+  <% if thing.user %>
+    <%= thing.user.login %>
+  <% else %>
+    Usunięty
+  <% end %>
+  <br />
+  
+  <!-- Status -->
+  Status:
+  <% if !thing.lending || is_status_free(thing.lending.data_od) %>
+    <span class='zielony'>Wolny</span><br />
+  <% else %>
+   <span class='czerwony'>Zajęty</span><br />
+    Zwrot: <%= thing.created_at.to_date %>
+  <% end %>
+  
+  <!-- Deleting -->
+  <% if session[:user_admin] %>
+    <%= link_to 'Usun', thing, :method => "delete" %>
+  <% end %>
+
+  <br /><br />
+
+</div>
+
+<% end %>
+  
+</div>

@@ -1,0 +1,16 @@
+<h3>Lista użytkowników</h3>
+
+<div class="div_tabs">
+  
+<% @users.each_with_index do |user, index| %>
+  <div class="div_tab_user">
+    <%#= index+1 %>
+    <%= user.login %>
+    <% if user.admin %>[Admin]<% end %><br />
+    <%= user.email %><br />
+    Data rejestracji: <%= user.created_at.strftime("%Y.%m.%d ") %><br />
+    <% if appHelper_ifAdmin %><%= link_to 'Usun', user, method: :delete %><% end %>
+  </div>
+<% end %>
+
+</div>

@@ -1,0 +1,15 @@
+<%= form_for @lending, :url => {:controller => "lendings",:action => "create" } do |f| %>
+  <div class="field">
+    <%= f.label "Data oddania" %><br />
+    <%= f.date_select :data_od %><br />
+  </div>
+
+  <div>
+    <%= f.hidden_field :thing_id, :value => @thing.id %>
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

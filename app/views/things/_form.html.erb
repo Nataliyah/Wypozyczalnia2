@@ -1,0 +1,25 @@
+<%= form_for(@thing) do |f| %>
+
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="field">
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+
+<div class="field">
+  <%= f.label :photo %>
+  <%= f.text_field :photo %>
+</div>
+
+<%#= fields_for @thing.user do |f_user| %>
+  <%# end %>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>

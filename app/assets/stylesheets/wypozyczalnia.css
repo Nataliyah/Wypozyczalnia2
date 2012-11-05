@@ -1,0 +1,143 @@
+body {
+	background-image: url(element.jpg);
+	font-family: Verdana;
+	margin: 0 auto;
+	text-align: center;
+	border: red solid 0px;
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+}
+
+#div_calosc {
+	border: green none 2px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	width: 700px;
+	height: auto;
+	
+}
+
+#div_naglowek {
+	border: black 2px solid;
+	width: 700px;
+	height: 60px;
+	text-align: center;
+	margin: 0 auto;
+	background-color: white;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#div_menu {
+	float:left;
+	background-color: white;
+	border: black 2px solid;
+	width: 130px;
+	padding-right: 0;
+	text-align: left;
+	margin: 0;
+	text-indent: 0;
+	display: block;
+}
+
+#menu {
+	font-size: 9px;
+	border: solid 1px none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 12px;
+	margin-right: 12px;
+
+}
+
+#div_zawartosc {
+	margin-top: 0px;
+	margin-left: 140px;
+	margin-right: 0px;
+	text-align: left;
+	background-color: white;
+	border: black 2px solid;
+	/*width: 568px;*/
+}
+
+#zawartosc {
+	border: solid 1px none;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	
+}
+
+#div_stopka {
+	margin: 0 auto;
+	text-align: center;
+	width: 700px;
+	margin-top: 10px;
+	background-color: white;
+	border: black 2px solid;
+	margin-bottom: 0;
+	
+}
+
+/* nowe */
+
+.div_tabs {
+   overflow: auto;
+}
+
+.div_tab_thing {
+  width: 150px;
+  height: 230px;
+  border: red 1px solid;
+  float: left;
+  text-align: center;
+}
+
+.div_tab_user {
+  width: 150px;
+  height: 100px;
+  border: red 1px solid;
+  float: left;
+  text-align: center;
+}
+
+.div_tab_news {
+  border: red 1px solid;
+  width: 150px;
+  height: 160px;
+  float: left;
+  text-align: center;
+}
+
+.im_thing {
+  margin: 0 auto;
+  border: black 1px solid;
+}
+
+/*
+a:link {	
+	font-weight: bold; 
+	text-decoration: none;
+	color: #380D71;
+	border: none;
+	}
+
+a:visited {	
+	font-weight: bold; 
+	text-decoration: none;
+	color: #380D71;
+	border: none;
+	}
+
+a:hover {	
+	font-weight: bold; 
+	text-decoration: none;
+	color: #C790B7;
+	border: none;
+	}
+	*/

@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wypozyczalnia2</title>
+  <title>Wypozyczalnia</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'wypozyczalnia' %>	<!-- podlaczenie do pliku wypozyczalnia.css -->
 </head>
 <body>
+  
+<div id="div_naglowek">
+  <%= link_to image_tag("naglowek.jpg"), :controller => 'home' %>
+  
+</div>
 
-<%= yield %>
+<div id="div_calosc">
+  
+  <div id="div_menu">
+    <div id="menu">
+       <%= render 'layouts/navigation'%>
+    </div>
+  </div>
+  
+  <div id="div_zawartosc">
+    <div id="zawartosc">
+      <p style="color: green"><%= flash[:notice] %></p>
+      <p style="color: red"><%= flash[:error] %></p>
+      <%= yield %>
+    </div>
+  </div>
+  
+</div>
+
+
 
 </body>
 </html>

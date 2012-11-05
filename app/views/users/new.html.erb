@@ -1,0 +1,41 @@
+<h3>Formularz rejestracji</h3>
+
+<%#= error_messages_for :user %>
+<%#= @user.inspect %>
+
+<%= form_for(@user) do |f| %>
+
+<% if @user.errors.any? %>
+<p>Form is invalid</p>
+<ul>
+  <% for message in @user.errors.full_messages %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<p>
+<%= f.label "Login" %>
+<%= f.text_field :login %>
+</p>
+
+<p>
+<%= f.label "Email" %>
+<%= f.text_field :email %>
+</p>
+
+<p>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+</p>
+
+<p>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+</p>
+
+<p>
+  <%= f.submit "Wyślij" %>
+</p>
+
+<% end %>

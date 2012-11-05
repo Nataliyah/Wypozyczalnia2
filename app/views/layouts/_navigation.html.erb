@@ -1,0 +1,19 @@
+<%= link_to 'Home', :controller => 'home' %> <br />
+<%= link_to 'Użytkownicy', :controller => 'users', :action => 'index' %><br />
+<%= link_to 'Przedmioty', :controller => 'things', :action => 'index' %><br /><br />
+
+<% if appHelper_ifUserLogged %>
+  <%= link_to 'Twoj profil', @user %><br />
+  <%= link_to 'Dodaj przedmiot', :controller => 'things', :action => 'new' %><br /><br />
+  Zalogowany [<%= session[:user_name] %>]<br />
+  <%= link_to 'Wyloguj sie', {:controller => "sessions", :action => 'destroy'}, :method => :delete  %>
+<% else %>
+   <%= link_to 'Zaloguj sie', new_session_path %><br />
+   <%= link_to 'Zarejestruj sie', new_user_path %>
+<% end %>
+<br /><br />
+
+<% if appHelper_ifAdmin%>
+  Panel admina:<br />
+  <%= link_to 'Pozyczenia', lendings_path %>
+<% end %>

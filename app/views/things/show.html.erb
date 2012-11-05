@@ -1,0 +1,54 @@
+<h3>Dane przedmiotu</h3>
+
+<p>
+Nazwa przedmiotu: <%= @thing.name %> <br />
+
+Właściciel: 
+<% if @thing.user %>
+  <%= @thing.user.login %>
+<% else %>
+  Usuniety
+<% end %>
+<br />
+
+  Opis: <%= @thing.description %>
+</p>
+
+<%= image_tag @thing.photo, :class => "im_thing" %>
+<br /><br />
+
+<%#= new_lending_path %>
+
+Status:
+<% if !@thing.lending || is_status_free(@thing.lending.data_od) %>
+
+  <span class='zielony'>Wolny</span><br />
+  
+    <% if @thing.lending %> 
+      Ostatnio pożyczony: <%= @thing.lending.data_od %>
+    <% else %>
+      Nie pożyczany
+    <% end %><br />
+    
+  <% if @lending %>
+    <%= render "lendings/form" %>
+  <% else %>
+    <%= link_to "Wypozycz", :wypozycz => true %><br />
+  <% end %>
+  
+<% else %>
+
+  <span class='czerwony'>Zajęty</span><br />
+  Zwrot: <%= @thing.created_at.to_date%>
+  
+<% end %>
+
+
+
+
+<%#= link_to "Wypozycz", :controller => "lendings", :action => "create", :thing_id => @thing.id  %>
+
+
+<% if appHelper_ifAdmin || (@thing.user && session[:user_id]==@thing.user.id) %>
+<%= link_to 'Usun przedmiot', @thing, confirm: "Czy na pewno chcesz usunac ten przedmiot?", :method => "delete" %>
+<% end %>
