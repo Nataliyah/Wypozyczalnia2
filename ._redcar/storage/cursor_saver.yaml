@@ -48,4 +48,7 @@ cursor_positions:
   - :path: config/environment.rb
     :cursor_offset: 132
     :timestamp: 2012-11-05 09:59:44.118000 +01:00
+  - :path: Gemfilee.lock
+    :cursor_offset: 1404
+    :timestamp: 2012-11-05 10:07:25.956000 +01:00
 files_to_retain: 0
