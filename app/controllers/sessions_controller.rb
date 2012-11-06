@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     session[:user_name] = nil
     session[:user_admin] = nil
-    redirect_to root_url, :notice => "Uzywkotnik wylogowany"
+    redirect_to root_url, :notice => "Uzytkownik wylogowany"
   end
   
 end

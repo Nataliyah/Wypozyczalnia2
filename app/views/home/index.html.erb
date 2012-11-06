@@ -1,17 +1,23 @@
-<h3>Strona główna</h3>
+<h3>STRONA GŁÓWNA</h3>
 
 <p>
-In previous versions of Rails, the default local variable would look for an instance variable with the same name as the partial in the parent. This behavior was deprecated in 2.3 and has been removed in Rails 3.0.
+Witam w Wypożyczalni - miejscu do wirtualnego wypożyczania przedmiotów.<br /><br />
+Znajdują się tu różne wirutalne przedmioty dodane przez użytkowników, które można wypożyczać.<br /><br />
+Aby zobaczyć wszystkie przedmioty w bazie kliknij tutaj: <%= link_to 'przedmioty', :controller => 'things', :action => 'index' %><br /><br />
+Aby zobaczyć wszystkich zarejestrowanych użytkowników kilknij tutaj: <%= link_to 'użytkownicy', :controller => 'users', :action => 'index' %><br /><br />
+Aby wypożyczać przedmioty, albo dodawać nowe, musisz być <%= link_to 'zalogowany', new_session_path %>. <br /><br />
 </p>
+
+
+Ostatnio dodane przedmioty:
 
 <div class="div_tabs">
   
-<% if @last_thing %>
+<% @last_things.each do |thing| %>
   
 <div class="div_tab_news">
   
- <% thing = @last_thing %>
-    
+
   <!-- Name -->
   <%= link_to thing.name, thing %>
   
@@ -19,7 +25,7 @@ In previous versions of Rails, the default local variable would look for an inst
   <% if is_proper_photo(thing.photo) %>
     <%= link_to image_tag(thing.photo, :class => "im_thing", :height => "110" ), thing %>
   <% else %>
-    <%= image_tag "no_photo.png", :class => "im_thing", :size => "100x110" %>
+    <%= link_to (image_tag "no_photo.png", :class => "im_thing", :size => "100x110"), thing %>
   <% end %>
   
   <!-- Owner -->
@@ -36,5 +42,13 @@ In previous versions of Rails, the default local variable would look for an inst
 </div>
 
 <% end %>
-  
+
+
 </div>
+
+<p>
+Ostatnio zarejestrowani użytkownicy:
+<% @last_users.each_with_index do |user, index| %>
+<%= user.login %><% if index==0 || index==1 %>, <% end %>
+<% end %>
+</p>

@@ -1,4 +1,7 @@
-<h3>Lista przedmiotów</h3>
+<h3>LISTA PRZEDMIOTÓW</h3>
+
+Można wypożyczać przedmioty jednie ze statusem <span class='zielony'>wolny</span>.<br /><br />
+ <%= link_to '>>Dodaj nowy przedmiot', :controller => 'things', :action => 'new' %><br /><br />
 
 <div class="div_tabs">
   
@@ -14,7 +17,7 @@
   <% if is_proper_photo(thing.photo) %>
     <%= link_to image_tag(thing.photo, :class => "im_thing", :height => "110" ), thing %>
   <% else %>
-    <%= image_tag "no_photo.png", :class => "im_thing", :size => "100x110" %>
+    <%= link_to image_tag("no_photo.png", :class => "im_thing", :size => "100x110"), thing %>
   <% end %>
   </p>
   

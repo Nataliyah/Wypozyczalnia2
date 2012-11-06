@@ -13,8 +13,10 @@ Wypozyczalnia2::Application.routes.draw do
   post "lendings/create"
   get "lendings/index"
     
-  delete "sessions/destroy"
+ # delete "sessions/destroy" => "sessions#destroy"
   
+  delete '/logout' => 'sessions#destroy'
+
   resources :users
   resources :sessions
   resources :things

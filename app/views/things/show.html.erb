@@ -1,4 +1,4 @@
-<h3>Dane przedmiotu</h3>
+<h3>DANE PRZEDMIOTU</h3>
 
 <p>
 Nazwa przedmiotu: <%= @thing.name %> <br />
@@ -14,7 +14,13 @@ Właściciel:
   Opis: <%= @thing.description %>
 </p>
 
-<%= image_tag @thing.photo, :class => "im_thing" %>
+  <% if is_proper_photo(@thing.photo) %>
+    <%= image_tag @thing.photo, :class => "im_thing" %>
+  <% else %>
+    <%= image_tag "no_photo.png", :class => "im_thing" %>
+  <% end %>
+  
+
 <br /><br />
 
 <%#= new_lending_path %>
@@ -28,7 +34,8 @@ Status:
       Ostatnio pożyczony: <%= @thing.lending.data_od %>
     <% else %>
       Nie pożyczany
-    <% end %><br />
+    <% end %>
+    <br /><br />
     
   <% if @lending %>
     <%= render "lendings/form" %>

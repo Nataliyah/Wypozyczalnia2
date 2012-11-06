@@ -1,4 +1,5 @@
 class ThingsController < ApplicationController
+  before_filter :require_login, :only => :new
   
   def index
     @things = Thing.all
@@ -55,6 +56,14 @@ class ThingsController < ApplicationController
   end
   
   def destroy_photo
+  end
+  
+  def require_login
+    unless appHelper_ifUserLogged()
+      respond_to do |format|
+       format.html { redirect_to new_session_path} #, notice: 'Musisz byc zalogowany, aby dodać przedmiot' }
+      end
+    end
   end
   
 end

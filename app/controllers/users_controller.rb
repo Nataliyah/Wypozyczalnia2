@@ -10,7 +10,8 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.save
-         format.html { redirect_to root_url, :notice => "Uzytkownik pomyslnie dodany" }
+         #format.html { redirect_to root_url, :notice => "Uzytkownik pomyslnie dodany" }
+        format.html {redirect_to new_session_path, :notice => "Uzytkownik pomyslnie dodany" }
       else
          format.html { render action: "new" }
       end 

@@ -6,7 +6,7 @@ body {
 	border: red solid 0px;
 	margin: 0;
 	padding: 0;
-	font-size: 13px;
+	font-size: 12px;
 }
 
 #div_calosc {
@@ -19,6 +19,15 @@ body {
 	
 }
 
+#div_logging {
+  width: 700px;
+  border: black 0px solid;
+  text-align: right;
+	margin: 0 auto;
+  margin-top: 20px;
+  padding-right: 20px;
+}
+
 #div_naglowek {
 	border: black 2px solid;
 	width: 700px;
@@ -26,7 +35,7 @@ body {
 	text-align: center;
 	margin: 0 auto;
 	background-color: white;
-	margin-top: 30px;
+	margin-top: 0px;
 	margin-bottom: 10px;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -93,7 +102,7 @@ body {
 .div_tab_thing {
   width: 150px;
   height: 230px;
-  border: red 1px solid;
+  border: gray 1px solid;
   float: left;
   text-align: center;
 }
@@ -101,13 +110,15 @@ body {
 .div_tab_user {
   width: 150px;
   height: 100px;
-  border: red 1px solid;
+  border: gray 2px solid;
   float: left;
   text-align: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .div_tab_news {
-  border: red 1px solid;
+  border: gray 2px solid;
   width: 150px;
   height: 160px;
   float: left;
@@ -119,25 +130,35 @@ body {
   border: black 1px solid;
 }
 
-/*
+
 a:link {	
 	font-weight: bold; 
 	text-decoration: none;
-	color: #380D71;
+	color: black;
 	border: none;
+  font-size: 14px;
+  
 	}
 
 a:visited {	
 	font-weight: bold; 
 	text-decoration: none;
-	color: #380D71;
+	color: black;
 	border: none;
+  font-size: 14px;
 	}
 
 a:hover {	
 	font-weight: bold; 
-	text-decoration: none;
-	color: #C790B7;
+	text-decoration: underline;
+	color: gray;
 	border: none;
+  font-size: 14px;
 	}
-	*/
+  
+a:active { 
+  color: gray;
+  font-size: 14px;
+  text-decoration: underline;
+}
+

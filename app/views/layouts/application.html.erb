@@ -2,12 +2,22 @@
 <html>
 <head>
   <title>Wypozyczalnia</title>
-  <%#= stylesheet_link_tag    "application", :media => "all" %>
-  <%#= javascript_include_tag "application" %>
-  <%#= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'wypozyczalnia' %>	<!-- podlaczenie do pliku wypozyczalnia.css -->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%#= stylesheet_link_tag 'wypozyczalnia' %>	<!-- podlaczenie do pliku wypozyczalnia.css -->
 </head>
 <body>
+  
+  <div id="div_logging">
+  <% if appHelper_ifUserLogged %>
+     Zalogowany [<%= session[:user_name] %>]
+      <%= link_to 'Wyloguj sie', logout_path, method: :delete  %>
+  <% else %>
+    <%= link_to 'Zarejestruj sie', new_user_path %> |
+    <%= link_to 'Zaloguj sie', new_session_path %>
+  <% end %>
+  </div>
   
 <div id="div_naglowek">
   <%= link_to image_tag("naglowek.jpg"), :controller => 'home' %>

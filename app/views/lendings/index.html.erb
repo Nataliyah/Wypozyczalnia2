@@ -1,13 +1,22 @@
-<table>
-  
-<% @lendings.each do |len| %>
-<tr>
-  <td>Thing: <% if len.thing %><%= len.thing.name %><% end %></td>
-  <td>User: <% if len.user %><%= len.user.login %><% end %></td>
-  <td>DataOd: <%= len.data_od %></td>
-  <td><%= link_to 'Usun', len, method: :delete %></td>
-</tr>
+<h3>POŻYCZENIA</h3>
+
+<% if @lendings.count>0 %>
+
+  <table>
+  <% @lendings.each do |len| %>
+  <tr>
+    <td>Thing: <% if len.thing %><%= len.thing.name %><% end %></td>
+    <td>User: <% if len.user %><%= len.user.login %><% end %></td>
+    <td>DataOd: <%= len.data_od %></td>
+    <td><%= link_to 'Usun', len, method: :delete %></td>
+  </tr>
+
+  <% end %>
+
+  </table>
+
+<% else %>
+
+Brak wypożyczeń
 
 <% end %>
-
-</table>

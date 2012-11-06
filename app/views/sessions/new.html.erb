@@ -1,4 +1,4 @@
-<h3>Logowanie</h3>
+<h3>LOGOWANIE</h3>
 
 <%= form_tag sessions_path do %>
 
@@ -15,5 +15,7 @@
 <p>
   <%= submit_tag "Log in" %>
 </p>
+
+Nie masz konta? <%= link_to 'Zarejestruj sie!', new_user_path %>
 
 <% end %>
